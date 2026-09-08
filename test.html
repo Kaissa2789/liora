@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Liora — Êtes-vous prêt·e ?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ground: #26121a; --ground-soft: #2f1822; --ivory: #ece4d8; --ivory-dim: #cfc3b6;
+    --muted: #a98c86; --rose: #d2a08f; --line: rgba(236,228,216,0.14); --line-strong: rgba(236,228,216,0.28);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--ground); color: var(--ivory); font-family: 'Jost', -apple-system, system-ui, sans-serif;
+    font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; min-height: 100vh; display: flex; flex-direction: column; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; width: 100%; }
+
+  header { padding: 34px 0; border-bottom: 1px solid var(--line); }
+  .header-inner { display: flex; justify-content: space-between; align-items: center; }
+  .mark { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; letter-spacing: 0.14em; }
+  .header-nav { display: flex; gap: 26px; align-items: center; }
+  .nav-cta { font-size: 0.82rem; letter-spacing: 0.1em; color: var(--ivory-dim); padding-bottom: 3px;
+    border-bottom: 1px solid var(--line-strong); transition: color 0.35s, border-color 0.35s; }
+  .nav-cta:hover, .nav-cta.current { color: var(--rose); border-color: var(--rose); }
+
+  main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 60px 28px; }
+  .quiz { max-width: 640px; width: 100%; text-align: center; }
+
+  .kicker { font-size: 0.82rem; letter-spacing: 0.28em; color: var(--rose); margin-bottom: 24px; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.2rem,5vw,3.6rem);
+    line-height: 1.12; max-width: 18ch; margin: 0 auto 26px; }
+  h1 em { font-style: italic; }
+  .sub { color: var(--ivory-dim); max-width: 46ch; margin: 0 auto 40px; }
+
+  .btn { display: inline-block; background: var(--ivory); color: #2a1119; font-size: 0.9rem; letter-spacing: 0.07em;
+    padding: 16px 42px; border: 1px solid var(--ivory); cursor: pointer; font-family: 'Jost', sans-serif;
+    transition: background 0.4s, color 0.4s; }
+  .btn:hover { background: transparent; color: var(--ivory); }
+  .btn-ghost { background: transparent; color: var(--ivory-dim); border: 1px solid var(--line-strong); margin-top: 14px; }
+  .btn-ghost:hover { color: var(--rose); border-color: var(--rose); }
+
+  .progress { font-size: 0.78rem; letter-spacing: 0.16em; color: var(--muted); margin-bottom: 28px; }
+  .question { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.7rem,3.6vw,2.4rem);
+    line-height: 1.25; margin-bottom: 36px; }
+  .options { display: flex; flex-direction: column; gap: 14px; }
+  .option { background: var(--ground-soft); border: 1px solid var(--line); color: var(--ivory);
+    font-family: 'Jost', sans-serif; font-size: 1rem; font-weight: 300; padding: 18px 22px; cursor: pointer;
+    text-align: left; transition: border-color 0.3s, background 0.3s; line-height: 1.4; }
+  .option:hover { border-color: var(--rose); background: #37202a; }
+
+  .result-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300;
+    font-size: clamp(2.2rem,5vw,3.4rem); margin-bottom: 24px; line-height: 1.15; }
+  .result-text { color: var(--ivory-dim); max-width: 44ch; margin: 0 auto 40px; font-size: 1.06rem; }
+  .email-field { max-width: 420px; margin: 0 auto 18px; }
+  .email-field input { width: 100%; background: var(--ground-soft); border: 1px solid var(--line-strong);
+    color: var(--ivory); font-family: 'Jost', sans-serif; font-size: 1rem; font-weight: 300; padding: 15px 16px;
+    outline: none; text-align: center; transition: border-color 0.3s; }
+  .email-field input:focus { border-color: var(--rose); }
+  .consent { display: flex; gap: 10px; align-items: flex-start; max-width: 420px; margin: 0 auto 26px;
+    font-size: 0.82rem; color: var(--muted); text-align: left; line-height: 1.5; cursor: pointer; }
+  .consent input { margin-top: 3px; accent-color: var(--rose); flex-shrink: 0; }
+  #email-error { color: var(--rose); font-size: 0.85rem; margin-top: 16px; display: none; }
+  .hidden { display: none; }
+
+  footer { padding: 40px 0; border-top: 1px solid var(--line); }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  footer .mark { font-size: 1.2rem; }
+  footer small { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.06em; }
+
+  @media (max-width: 720px) { .header-nav { gap: 15px; } .nav-cta { font-size: 0.72rem; } }
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap header-inner">
+      <div class="mark"><a href="index.html">Liora</a></div>
+      <nav class="header-nav">
+        <a href="histoire.html" class="nav-cta">Notre histoire</a>
+        <a href="annonces.html" class="nav-cta">Nos annonces</a>
+        <a href="index.html#candidature" class="nav-cta">Candidature</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="quiz">
+      <!-- INTRO -->
+      <div id="screen-intro">
+        <p class="kicker">Le test</p>
+        <h1>Êtes-vous prêt·e à rencontrer la <em>bonne</em> personne ?</h1>
+        <p class="sub">Un court test, sans bonne ni mauvaise réponse. Juste quelques questions pour vous aider à y voir plus clair. Deux minutes, pas plus.</p>
+        <button class="btn" id="start">Commencer le test</button>
+      </div>
+
+      <!-- QUESTIONS -->
+      <div id="screen-question" class="hidden">
+        <p class="progress" id="progress">Question 1 / 6</p>
+        <div class="question" id="q-text"></div>
+        <div class="options" id="q-options"></div>
+      </div>
+
+      <!-- EMAIL GATE -->
+      <div id="screen-email" class="hidden">
+        <p class="kicker">Presque terminé</p>
+        <h1 style="font-size:clamp(2rem,4.5vw,3rem);">Votre résultat est <em>prêt</em>.</h1>
+        <p class="sub">Laissez votre email pour le découvrir. Je pourrai aussi vous partager, de temps à autre, quelques conseils pour vos rencontres.</p>
+        <div class="email-field"><input type="email" id="lead-email" placeholder="votre@email.com" /></div>
+        <label class="consent"><input type="checkbox" id="consent" /> <span>J'accepte que Liora conserve mon email pour me recontacter. Mes données restent strictement confidentielles.</span></label>
+        <button class="btn" id="see-result">Voir mon résultat</button>
+        <p id="email-error">Merci d'entrer un email valide et de cocher la case.</p>
+      </div>
+
+      <!-- RESULT -->
+      <div id="screen-result" class="hidden">
+        <p class="kicker">Votre résultat</p>
+        <div class="result-title" id="r-title"></div>
+        <p class="result-text" id="r-text"></p>
+        <a class="btn" href="index.html#candidature">Déposer ma candidature</a>
+        <br />
+        <button class="btn btn-ghost" id="restart">Refaire le test</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="mark">Liora</div>
+      <small>Paris — Sur candidature uniquement</small>
+    </div>
+  </footer>
+
+  <script>
+    const questions = [
+      { q: "Où en êtes-vous dans votre vie, aujourd'hui ?", a: [
+        ["Posé·e, et disponible pour quelqu'un", 3],
+        ["Bien, avec de la place à faire pour l'autre", 2],
+        ["Une période chargée, mais l'envie est là", 1],
+        ["En pleine transition, je me cherche encore", 0] ] },
+      { q: "Quand vous pensez à une relation, vous imaginez d'abord…", a: [
+        ["Construire quelque chose de durable", 3],
+        ["Une belle complicité, on verra où ça mène", 2],
+        ["Rencontrer, sans trop me projeter", 1],
+        ["Je n'y pense pas vraiment", 0] ] },
+      { q: "Laisser quelqu'un vous accompagner dans cette recherche, ça vous…", a: [
+        ["Rassure, j'aime être guidé·e", 3],
+        ["Intrigue, je suis curieux·se", 2],
+        ["Intimide un peu, mais je suis ouvert·e", 1],
+        ["Gêne, je préfère gérer seul·e", 0] ] },
+      { q: "Combien d'énergie êtes-vous prêt·e à y consacrer ?", a: [
+        ["Autant qu'il faudra pour trouver la bonne personne", 3],
+        ["Du temps régulier, avec plaisir", 2],
+        ["Un peu, quand j'en ai l'occasion", 1],
+        ["Honnêtement, pas beaucoup en ce moment", 0] ] },
+      { q: "Face à une rencontre qui compte, vous avez tendance à…", a: [
+        ["Vous investir pleinement", 3],
+        ["Avancer prudemment mais sincèrement", 2],
+        ["Attendre de voir avant de vous livrer", 1],
+        ["Prendre peur et reculer", 0] ] },
+      { q: "Ce que vous attendez d'une relation est…", a: [
+        ["Très clair pour moi", 3],
+        ["Assez clair, quelques questions restent", 2],
+        ["Encore flou, mais j'y réfléchis", 1],
+        ["Je ne sais pas vraiment", 0] ] }
+    ];
+
+    const results = [
+      { min: 13, title: "Vous êtes prêt·e.",
+        text: "Vous savez ce que vous voulez, et vous avez de la place dans votre vie pour quelqu'un. C'est exactement le bon moment pour être accompagné·e vers la bonne personne — ne le laissez pas passer." },
+      { min: 7, title: "Le bon moment approche.",
+        text: "Vous avez l'envie, et c'est l'essentiel. Un accompagnement sur-mesure sert précisément à ça : avancer à votre rythme, sans pression, en étant guidé·e à chaque étape. On peut commencer tout en douceur." },
+      { min: 0, title: "Le plus beau reste à écrire.",
+        text: "Douter, se chercher, hésiter — c'est profondément humain, et ce n'est pas un obstacle. Parfois, le premier pas se fait mieux accompagné·e. Si l'envie est là, même timide, parlons-en : rien ne vous engage." }
+    ];
+
+    const FORMSPREE = "https://formspree.io/f/xaeylopg";
+    let current = 0, score = 0, finalResult = null;
+    const $ = (id) => document.getElementById(id);
+
+    function showQuestion() {
+      const item = questions[current];
+      $('progress').textContent = 'Question ' + (current + 1) + ' / ' + questions.length;
+      $('q-text').textContent = item.q;
+      const box = $('q-options');
+      box.innerHTML = '';
+      item.a.forEach(([label, pts]) => {
+        const b = document.createElement('button');
+        b.className = 'option';
+        b.textContent = label;
+        b.addEventListener('click', () => {
+          score += pts;
+          current++;
+          if (current < questions.length) { showQuestion(); }
+          else { showEmailGate(); }
+        });
+        box.appendChild(b);
+      });
+    }
+
+    function showEmailGate() {
+      finalResult = results.find(x => score >= x.min);
+      $('screen-question').classList.add('hidden');
+      $('screen-email').classList.remove('hidden');
+    }
+
+    function showResult() {
+      $('screen-email').classList.add('hidden');
+      $('r-title').textContent = finalResult.title;
+      $('r-text').textContent = finalResult.text;
+      $('screen-result').classList.remove('hidden');
+    }
+
+    $('see-result').addEventListener('click', async () => {
+      const email = $('lead-email').value.trim();
+      const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!valid || !$('consent').checked) { $('email-error').style.display = 'block'; return; }
+      $('email-error').style.display = 'none';
+      const btn = $('see-result'); btn.disabled = true; btn.textContent = 'Un instant…';
+      const data = new FormData();
+      data.append('email', email);
+      data.append('Résultat du test', finalResult.title);
+      data.append('Score', score + ' / 18');
+      data.append('Origine', 'Test de compatibilité');
+      data.append('_subject', 'Nouveau lead — Test Liora');
+      try { await fetch(FORMSPREE, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } }); } catch (e) {}
+      showResult();
+    });
+
+    $('start').addEventListener('click', () => {
+      $('screen-intro').classList.add('hidden');
+      $('screen-question').classList.remove('hidden');
+      showQuestion();
+    });
+    $('restart').addEventListener('click', () => {
+      current = 0; score = 0; finalResult = null;
+      $('lead-email').value = ''; $('consent').checked = false;
+      const btn = $('see-result'); btn.disabled = false; btn.textContent = 'Voir mon résultat';
+      $('screen-result').classList.add('hidden');
+      $('screen-intro').classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
