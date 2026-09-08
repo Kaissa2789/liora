@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Liora — Notre histoire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ground: #26121a; --ground-soft: #2f1822; --ivory: #ece4d8; --ivory-dim: #cfc3b6;
+    --muted: #a98c86; --rose: #d2a08f; --line: rgba(236,228,216,0.14); --line-strong: rgba(236,228,216,0.28);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--ground); color: var(--ivory); font-family: 'Jost', -apple-system, system-ui, sans-serif;
+    font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+
+  header { padding: 34px 0; border-bottom: 1px solid var(--line); }
+  .header-inner { display: flex; justify-content: space-between; align-items: center; }
+  .mark { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; letter-spacing: 0.14em; }
+  .header-nav { display: flex; gap: 26px; align-items: center; }
+  .nav-cta { font-size: 0.82rem; letter-spacing: 0.1em; color: var(--ivory-dim); padding-bottom: 3px;
+    border-bottom: 1px solid var(--line-strong); transition: color 0.35s, border-color 0.35s; }
+  .nav-cta:hover, .nav-cta.current { color: var(--rose); border-color: var(--rose); }
+
+  .intro { text-align: center; padding: 96px 28px 40px; }
+  .intro .kicker { font-size: 0.82rem; letter-spacing: 0.28em; color: var(--rose); margin-bottom: 26px; }
+  .intro h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.4rem,5.5vw,4rem);
+    line-height: 1.1; max-width: 18ch; margin: 0 auto; }
+  .intro h1 em { font-style: italic; }
+
+  .story { max-width: 660px; margin: 0 auto; padding: 40px 28px 20px; }
+  .story p { font-size: 1.08rem; color: var(--ivory-dim); line-height: 1.85; margin-bottom: 1.6em; }
+  .story p.lead { color: var(--ivory); }
+  .pullquote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300;
+    font-size: clamp(1.8rem,4vw,2.6rem); line-height: 1.3; color: var(--ivory);
+    text-align: center; margin: 48px auto; max-width: 20ch; }
+  .signature { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.35rem;
+    color: var(--rose); margin-top: 40px; }
+
+  .closing { text-align: center; padding: 80px 28px 80px; border-top: 1px solid var(--line); margin-top: 60px; }
+  .closing h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem,4.5vw,3.2rem);
+    max-width: 20ch; margin: 0 auto 34px; line-height: 1.12; }
+  .btn { display: inline-block; background: var(--ivory); color: #2a1119; font-size: 0.9rem; letter-spacing: 0.08em;
+    padding: 16px 40px; border: 1px solid var(--ivory); transition: background 0.4s, color 0.4s; }
+  .btn:hover { background: transparent; color: var(--ivory); }
+
+  footer { padding: 52px 0; border-top: 1px solid var(--line); }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  footer .mark { font-size: 1.2rem; }
+  footer small { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.06em; }
+
+  @media (max-width: 720px) {
+    .intro { padding: 64px 20px 30px; }
+    .header-nav { gap: 15px; }
+    .nav-cta { font-size: 0.72rem; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap header-inner">
+      <div class="mark"><a href="index.html">Liora</a></div>
+      <nav class="header-nav">
+        <a href="histoire.html" class="nav-cta current">Notre histoire</a>
+        <a href="annonces.html" class="nav-cta">Nos annonces</a>
+        <a href="index.html#candidature" class="nav-cta">Candidature</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="intro">
+    <p class="kicker">Notre histoire</p>
+    <h1>Tout a commencé par une <em>question</em> toute simple.</h1>
+  </section>
+
+  <article class="story">
+    <p class="lead">« Tu ne connaîtrais pas quelqu'un, pour moi ? »</p>
+    <p>Au départ, il n'y avait pas d'agence. Juste cette question qui revenait, encore et encore, dans la bouche de mes proches. Alors j'ai présenté des gens — par instinct, par plaisir, parce que j'ai toujours su sentir qui pouvait s'entendre.</p>
+    <p>Et puis il y a eu un premier mariage. Puis un deuxième. Aujourd'hui, six couples se sont dit oui grâce à ces rencontres. Ce qui me touche, ce n'est pas le nombre : c'est ce moment précis où deux personnes se regardent et comprennent qu'elles ont trouvé la bonne. Voir quelqu'un enfin heureux, apaisé, à sa place — c'est ça qui me fait avancer.</p>
+
+    <p class="pullquote">Les plus belles histoires méritent mieux que le hasard.</p>
+
+    <p>Car aujourd'hui, se rencontrer est devenu étrangement difficile. Entre le métro-boulot-dodo et les écrans, on se croise sans se parler, on fait défiler des profils sans jamais vraiment se voir. Les vraies rencontres, celles qui naissent d'un regard, se font de plus en plus rares.</p>
+    <p>Liora est née de cette conviction : les plus belles histoires méritent mieux que le hasard d'une application. Elles méritent quelqu'un qui prend le temps de vous connaître, de comprendre ce que vous cherchez vraiment, et de vous présenter — avec soin, discrétion et exigence — la personne qui pourrait tout changer.</p>
+    <p class="lead">Peut-être que la vôtre reste à écrire. Si c'est le cas, j'aimerais en faire partie.</p>
+    <p class="signature">— La fondatrice de Liora</p>
+  </article>
+
+  <section class="closing">
+    <h2>Et si votre histoire commençait ici ?</h2>
+    <a href="index.html#candidature" class="btn">Déposer ma candidature</a>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="mark">Liora</div>
+      <small>Paris — Sur candidature uniquement</small>
+    </div>
+  </footer>
+</body>
+</html>
