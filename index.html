@@ -4,6 +4,22 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Liora — Agence de rencontres confidentielle</title>
+<meta name="description" content="Liora, agence de rencontres confidentielle à Paris. Un accompagnement discret et sur-mesure, sur candidature, pour celles et ceux qui cherchent une relation qui compte vraiment." />
+<link rel="canonical" href="https://agence-liora.fr/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Liora" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:title" content="Liora — Agence de rencontres confidentielle" />
+<meta property="og:description" content="Liora, agence de rencontres confidentielle à Paris. Un accompagnement discret et sur-mesure, sur candidature, pour celles et ceux qui cherchent une relation qui compte vraiment." />
+<meta property="og:url" content="https://agence-liora.fr/" />
+<meta property="og:image" content="https://agence-liora.fr/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://agence-liora.fr/og-image.jpg" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -253,6 +269,7 @@
       <div class="count">Six</div>
       <div class="count-label">unions nées de ces rencontres</div>
 
+      <!-- Témoignages masqués en attendant les vrais (réactiver en retirant ce commentaire)
       <div class="voices">
         <div class="voice">
           <blockquote>« Placeholder — un témoignage court et sincère d'un de vos couples. »</blockquote>
@@ -265,6 +282,7 @@
           <p class="placeholder-note">À remplacer</p>
         </div>
       </div>
+      -->
     </div>
   </section>
 
@@ -338,6 +356,9 @@
     #form-success h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.8rem,4vw,2.6rem); color: var(--ivory); margin-bottom: 18px; }
     #form-success p { color: var(--ivory-dim); }
     #form-error { color: var(--rose); margin-top: 20px; }
+    .cand-consent { display: flex; gap: 12px; align-items: flex-start; margin-top: 44px; font-size: 0.86rem; color: var(--ivory-dim); line-height: 1.6; cursor: pointer; }
+    .cand-consent input { margin-top: 4px; accent-color: var(--rose); flex-shrink: 0; width: 16px; height: 16px; }
+    .cand-consent a { border-bottom: 1px solid var(--line-strong); color: var(--ivory); }
     @media (max-width: 600px) { .cand-row { grid-template-columns: 1fr; gap: 0; } }
   </style>
   <section class="apply" id="candidature">
@@ -427,6 +448,11 @@
         </div>
 
         <input type="hidden" name="_subject" value="Nouvelle candidature — Liora" />
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
+        <label class="cand-consent">
+          <input type="checkbox" name="Consentement RGPD" value="Oui" required />
+          <span>J'accepte que Liora (Glow Hub SASU) utilise les informations de ma candidature — y compris, si je les ai renseignées, celles concernant mon origine ou ma culture — pour étudier mon profil et me recontacter. Je peux retirer mon accord et demander leur suppression à tout moment. <a href="confidentialite.html" target="_blank">Politique de confidentialité</a> <span class="req">*</span></span>
+        </label>
         <div class="cand-submit">
           <button class="btn" type="submit">Envoyer ma candidature</button>
           <p class="cand-note">Vos réponses restent strictement confidentielles.</p>
@@ -456,7 +482,7 @@
         <a href="histoire.html" class="nav-cta">Notre histoire</a>
         <a href="annonces.html" class="nav-cta">Nos annonces</a>
         <a href="test.html" class="nav-cta">Le test</a>
-        <small>Paris — Sur candidature uniquement</small>
+        <small>Paris — Sur candidature uniquement · <a href="confidentialite.html" style="border-bottom:1px solid var(--line-strong);">Mentions légales &amp; confidentialité</a></small>
       </nav>
     </div>
   </footer>
