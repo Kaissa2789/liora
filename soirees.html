@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Liora — Les soirées</title>
+<meta name="description" content="Soirées de speed dating en petit comité à Paris, pour des célibataires qui cherchent une relation sérieuse." />
+<link rel="canonical" href="https://agence-liora.fr/soirees.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Liora" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:title" content="Liora — Les soirées" />
+<meta property="og:description" content="Soirées de speed dating en petit comité à Paris, pour des célibataires qui cherchent une relation sérieuse." />
+<meta property="og:url" content="https://agence-liora.fr/soirees.html" />
+<meta property="og:image" content="https://agence-liora.fr/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://agence-liora.fr/og-image.jpg" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ground: #26121a; --ground-soft: #2f1822; --ivory: #ece4d8; --ivory-dim: #cfc3b6;
+    --muted: #a98c86; --rose: #d2a08f; --line: rgba(236,228,216,0.14); --line-strong: rgba(236,228,216,0.28);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--ground); color: var(--ivory); font-family: 'Jost', -apple-system, system-ui, sans-serif;
+    font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+  .narrow { max-width: 720px; }
+
+  header { padding: 34px 0; border-bottom: 1px solid var(--line); }
+  .header-inner { display: flex; justify-content: space-between; align-items: center; }
+  .mark { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; letter-spacing: 0.14em; }
+  .header-nav { display: flex; gap: 28px; align-items: center; }
+  .nav-cta { font-size: 0.82rem; letter-spacing: 0.1em; color: var(--ivory-dim); padding-bottom: 3px;
+    border-bottom: 1px solid var(--line-strong); transition: color 0.35s, border-color 0.35s; }
+  .nav-cta:hover { color: var(--rose); border-color: var(--rose); }
+  .nav-cta.current { color: var(--rose); border-color: var(--rose); }
+
+  .intro { text-align: center; padding: 96px 28px 70px; }
+  .intro .kicker { font-size: 0.82rem; letter-spacing: 0.28em; color: var(--rose); margin-bottom: 26px; }
+  .intro h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.4rem,5.5vw,4rem);
+    line-height: 1.1; max-width: 16ch; margin: 0 auto; }
+  .intro h1 em { font-style: italic; }
+  .intro p { margin: 28px auto 0; max-width: 52ch; color: var(--ivory-dim); }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding: 20px 0 40px; }
+  .ann {
+    background: var(--ground-soft); border: 1px solid var(--line); padding: 40px 38px;
+    display: flex; flex-direction: column; position: relative;
+  }
+  .ann-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; }
+  .ann-tag { font-size: 0.78rem; letter-spacing: 0.14em; color: var(--rose); }
+  .ann-num { font-size: 0.78rem; letter-spacing: 0.14em; color: var(--muted); }
+  .ann-name { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.9rem; line-height: 1.1; }
+  .ann-ident { font-size: 0.88rem; color: var(--muted); margin-top: 8px; line-height: 1.45; }
+  .ann-hook { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem;
+    line-height: 1.28; color: var(--ivory); margin: 22px 0; }
+  .ann-seek-l { font-size: 0.74rem; letter-spacing: 0.12em; color: var(--rose); margin-bottom: 6px; }
+  .ann-seek { font-size: 0.96rem; color: var(--ivory-dim); line-height: 1.5; }
+  .ann-cta { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .ann-cta a { font-size: 0.86rem; letter-spacing: 0.04em; color: var(--ivory);
+    border-bottom: 1px solid var(--line-strong); padding-bottom: 3px; transition: color 0.3s, border-color 0.3s; }
+  .ann-cta a:hover { color: var(--rose); border-color: var(--rose); }
+
+  .closing { text-align: center; padding: 90px 28px 70px; border-top: 1px solid var(--line); margin-top: 40px; }
+  .closing h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem,4.5vw,3.2rem);
+    max-width: 20ch; margin: 0 auto 34px; line-height: 1.12; }
+  .btn { display: inline-block; background: var(--ivory); color: #2a1119; font-size: 0.9rem; letter-spacing: 0.08em;
+    padding: 16px 40px; border: 1px solid var(--ivory); transition: background 0.4s, color 0.4s; }
+  .btn:hover { background: transparent; color: var(--ivory); }
+
+  footer { padding: 52px 0; border-top: 1px solid var(--line); }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  footer .mark { font-size: 1.2rem; }
+  footer small { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.06em; }
+
+  @media (max-width: 720px) {
+    .grid { grid-template-columns: 1fr; gap: 22px; }
+    .intro { padding: 66px 20px 50px; }
+    .header-nav { gap: 16px; }
+    .nav-cta { font-size: 0.72rem; }
+  }
+
+  .steps { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 28px; padding: 30px 0 70px; }
+  .step { border-top: 1px solid var(--line-strong); padding-top: 22px; }
+  .step-n { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; color: var(--rose); line-height: 1; }
+  .step h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.45rem; margin: 12px 0 8px; line-height: 1.2; }
+  .step p { font-size: 0.94rem; color: var(--ivory-dim); line-height: 1.6; }
+  .infos { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: 80px; }
+  .info { padding: 30px 24px; text-align: center; }
+  .info + .info { border-left: 1px solid var(--line); }
+  .info-l { font-size: 0.74rem; letter-spacing: 0.16em; color: var(--rose); margin-bottom: 8px; }
+  .info-v { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; line-height: 1.25; }
+  .apply { background: var(--ground-soft); padding: 90px 0; }
+  .apply-intro { text-align: center; margin-bottom: 48px; }
+  .apply-intro .kicker { font-size: 0.82rem; letter-spacing: 0.28em; color: var(--rose); margin-bottom: 20px; }
+  .apply-intro h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem,4vw,3rem); line-height: 1.12; max-width: 20ch; margin: 0 auto; }
+  .apply-intro p { margin: 22px auto 0; max-width: 46ch; color: var(--ivory-dim); }
+  #soiree-form { max-width: 640px; margin: 0 auto; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  .field { margin-bottom: 26px; }
+  .field label { display: block; font-size: 0.82rem; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 9px; }
+  .field input, .field select {
+    width: 100%; background: transparent; border: 0; border-bottom: 1px solid var(--line-strong);
+    color: var(--ivory); font-family: 'Jost', sans-serif; font-size: 1rem; font-weight: 300;
+    padding: 9px 0; outline: none; transition: border-color 0.3s ease; border-radius: 0;
+  }
+  .field input:focus, .field select:focus { border-color: var(--rose); }
+  .field select option { background: var(--ground); }
+  .req { color: var(--rose); }
+  .consent { display: flex; gap: 12px; align-items: flex-start; margin-top: 18px; font-size: 0.86rem; color: var(--ivory-dim); line-height: 1.6; cursor: pointer; }
+  .consent input { margin-top: 4px; accent-color: var(--rose); flex-shrink: 0; width: 16px; height: 16px; }
+  .consent a { border-bottom: 1px solid var(--line-strong); color: var(--ivory); }
+  .submit { margin-top: 40px; text-align: center; }
+  .submit .btn { cursor: pointer; font-family: 'Jost', sans-serif; }
+  .note { font-size: 0.8rem; color: var(--muted); margin-top: 16px; }
+  #form-success, #form-error { display: none; text-align: center; }
+  #form-success h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.8rem,4vw,2.6rem); margin-bottom: 18px; }
+  #form-success p { color: var(--ivory-dim); max-width: 46ch; margin: 0 auto; }
+  #form-error { color: var(--rose); margin-top: 20px; }
+  .btn:focus-visible, .field input:focus-visible, .field select:focus-visible { outline: 1px solid var(--rose); outline-offset: 4px; }
+  @media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 720px) {
+    .steps { grid-template-columns: 1fr; gap: 22px; }
+    .infos { grid-template-columns: 1fr; }
+    .info + .info { border-left: 0; border-top: 1px solid var(--line); }
+    .row { grid-template-columns: 1fr; gap: 0; }
+    .header-nav { flex-wrap: wrap; justify-content: flex-end; row-gap: 8px; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap header-inner">
+      <div class="mark"><a href="index.html" style="color:inherit;">Liora</a></div>
+      <nav class="header-nav">
+        <a href="histoire.html" class="nav-cta">Notre histoire</a>
+        <a href="annonces.html" class="nav-cta">Nos annonces</a>
+        <a href="soirees.html" class="nav-cta current">Soirées</a>
+        <a href="index.html#candidature" class="nav-cta">Candidature</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="intro">
+    <p class="kicker">Les soirées Liora</p>
+    <h1>Rencontrer en vrai, <em>en toute élégance</em>.</h1>
+    <p>Des soirées de speed dating en petit comité à Paris, pour des célibataires qui cherchent une relation sérieuse. Pas d'écran, pas d'algorithme : de vraies rencontres, dans un cadre choisi avec soin.</p>
+  </section>
+
+  <div class="wrap">
+    <div class="infos">
+      <div class="info"><div class="info-l">PROCHAINE SOIRÉE</div><div class="info-v">Date et lieu annoncés très bientôt</div></div>
+      <div class="info"><div class="info-l">LE FORMAT</div><div class="info-v">Petit comité, groupes équilibrés par tranche d'âge</div></div>
+      <div class="info"><div class="info-l">LA PLACE</div><div class="info-v">Tarif communiqué avec la date</div></div>
+    </div>
+
+    <div class="steps">
+      <div class="step"><div class="step-n">1</div><h3>Vous vous pré-inscrivez</h3><p>Quelques informations suffisent. Vous êtes prévenu·e en priorité dès que la date est fixée.</p></div>
+      <div class="step"><div class="step-n">2</div><h3>Je compose les groupes</h3><p>Chaque soirée réunit des personnes d'âges proches, avec autant de femmes que d'hommes.</p></div>
+      <div class="step"><div class="step-n">3</div><h3>La soirée</h3><p>Une série de tête-à-tête de quelques minutes, autour d'un verre, dans un lieu élégant à Paris.</p></div>
+      <div class="step"><div class="step-n">4</div><h3>Le lendemain</h3><p>Vous m'indiquez qui vous aimeriez revoir. Si c'est réciproque, je vous mets en relation.</p></div>
+    </div>
+  </div>
+
+  <section class="apply" id="inscription">
+    <div class="wrap narrow">
+      <div class="apply-intro">
+        <p class="kicker">PRÉ-INSCRIPTION</p>
+        <h2>Réservez votre place pour la prochaine soirée.</h2>
+        <p>Les places sont limitées pour garder l'esprit petit comité. Les pré-inscrits sont prévenus en premier.</p>
+      </div>
+
+      <form id="soiree-form">
+        <input type="hidden" name="_subject" value="Pré-inscription soirée speed dating Liora" />
+        <input type="hidden" name="Formulaire" value="Soirée speed dating" />
+        <div class="row">
+          <div class="field"><label for="sd-prenom">Prénom <span class="req">*</span></label><input id="sd-prenom" type="text" name="Prénom" required autocomplete="given-name" /></div>
+          <div class="field"><label for="sd-age">Âge <span class="req">*</span></label><input id="sd-age" type="text" name="Âge" required inputmode="numeric" /></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="sd-email">Email <span class="req">*</span></label><input id="sd-email" type="email" name="email" required autocomplete="email" /></div>
+          <div class="field"><label for="sd-tel">Téléphone</label><input id="sd-tel" type="tel" name="Téléphone" autocomplete="tel" /></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="sd-genre">Vous êtes <span class="req">*</span></label>
+            <select id="sd-genre" name="Vous êtes" required>
+              <option value="">Choisir</option>
+              <option>Une femme</option>
+              <option>Un homme</option>
+            </select>
+          </div>
+          <div class="field"><label for="sd-ville">Ville <span class="req">*</span></label><input id="sd-ville" type="text" name="Ville" required /></div>
+        </div>
+        <div class="field"><label for="sd-recherche">Vous cherchez <span class="req">*</span></label>
+          <select id="sd-recherche" name="Recherche" required>
+            <option value="">Choisir</option>
+            <option>Une relation sérieuse</option>
+            <option>Une relation en vue du mariage</option>
+          </select>
+        </div>
+        <label class="consent">
+          <input type="checkbox" required />
+          <span>J'accepte que Liora (Glow Hub SASU) utilise ces informations pour me recontacter au sujet des soirées. Je peux demander leur suppression à tout moment. <a href="confidentialite.html" target="_blank">Politique de confidentialité</a> <span class="req">*</span></span>
+        </label>
+        <div class="submit">
+          <button class="btn" type="submit">Me pré-inscrire</button>
+          <p class="note">Sans engagement. Vos informations restent confidentielles.</p>
+        </div>
+        <p id="form-error">Un souci est survenu à l'envoi. Réessayez, ou écrivez-moi à contact@agence-liora.fr.</p>
+      </form>
+
+      <div id="form-success">
+        <h3>Merci, votre pré-inscription est bien reçue.</h3>
+        <p>Je vous préviens en priorité dès que la date et le lieu de la prochaine soirée sont fixés.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <h2>Envie d'un accompagnement personnalisé ?</h2>
+    <a href="index.html#candidature" class="btn">Déposer ma candidature</a>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="mark">Liora</div>
+      <small>Paris — Sur candidature uniquement · <a href="confidentialite.html" style="border-bottom:1px solid var(--line-strong);">Mentions légales &amp; confidentialité</a></small>
+    </div>
+  </footer>
+
+  <script>
+    var FORMSPREE_ENDPOINT = "https://formspree.io/f/xyeybwyk";
+    var sdForm = document.getElementById('soiree-form');
+    sdForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var btn = sdForm.querySelector('button[type="submit"]');
+      var errEl = document.getElementById('form-error');
+      errEl.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Envoi…';
+      try {
+        var res = await fetch(FORMSPREE_ENDPOINT, { method: 'POST', body: new FormData(sdForm), headers: { 'Accept': 'application/json' } });
+        if (!res.ok) throw new Error('bad response');
+        sdForm.style.display = 'none';
+        var ok = document.getElementById('form-success');
+        ok.style.display = 'block';
+        ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = 'Me pré-inscrire';
+        errEl.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
